@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    border: 2px red solid;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.image1{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8anGkwOpQdjYwcYx9smzERXUAOkgppqGhiw&usqp=CAU');
+}
+
+.image2{
+    background-image: url('https://images.unsplash.com/photo-1516571137133-1be29e37143a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2lsZCUyMGZvcmVzdHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80');
+}
+
+.image3{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Gjur5CR-iiRxdUz3WubJrBkMIxfMTb0dmQ&usqp=CAU');
+}
+
+.image4{
+    background-image: url('https://img.traveltriangle.com/blog/wp-content/uploads/2021/08/Places-to-Visit-in-Winter-in-USA1.jpg');
+}
+
+.image5{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYfoaLBwj44ZSLnbe8nnSDa5zU7pttV3pABA&usqp=CAU');
+}
+.container{
+    display: flex;
+    width: 90vw;
+}
+.panel{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor:pointer;
+    flex:0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+.panel h3{
+    font-size: 24px;
+    position:absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity:0;
+}
+
+.panel.active{
+    flex: 5;
+    
+}
+.panel.active h3{
+    opacity:1;
+    transition:opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4), .panel:nth-of-type(5){
+        display: none;
+    }
+}
+
+
