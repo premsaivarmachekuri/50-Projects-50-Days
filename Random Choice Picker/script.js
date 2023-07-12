@@ -4,16 +4,18 @@ const textarea = document.getElementById('textarea')
 textarea.focus()
 
 textarea.addEventListener('keyup', (e) => {
-    createTage(e.target.value)
+    createTags(e.target.value)
 
     if(e.key === 'Enter'){
         setTimeout(() => {
             e.target.value = ''
         }, 10)
+        randomSelect()
     }
+    
 })
 
-function createTage(input){
+function createTags(input){
     const tags = input.split(',').filter(tag => tag.trim() !== '').map(tag =>  tag.trim())
 
     tagsEl.innerHTML = ''
@@ -27,7 +29,7 @@ function createTage(input){
     
 }
 
-function randomSelct(){
+function randomSelect(){
     const times = 30
 
     const interval = setInterval(() => {
@@ -53,7 +55,7 @@ function randomSelct(){
 
 function pickRandomTag(){
     const tags = document.querySelectorAll('.tag')
-    return tag[Math.floor(Math.random() * tags.length)]
+    return tags[Math.floor(Math.random() * tags.length)]
 }
 
 function hightlightTag(tag){
@@ -64,3 +66,4 @@ function hightlightTag(tag){
 function unHightlightTag(tag){
     tag.classList.remove('highlight')
 }
+
